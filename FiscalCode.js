@@ -1,9 +1,7 @@
 function FiscalCode(personObject) {
-    // console.log(encodeSurName(personObject.surname) + encodeFirstNAme(personObject.name) + encodeDOB(personObject.dob, personObject.gender))
+    console.log(encodeSurName(personObject.surname) + encodeFirstNAme(personObject.name) + encodeDOB(personObject.dob, personObject.gender))
     return encodeSurName(personObject.surname) + encodeFirstNAme(personObject.name) + encodeDOB(personObject.dob, personObject.gender)
 }
-
-
 
 function encodeSurName(surname) {
     let arr = surname.toUpperCase().split('')
@@ -11,12 +9,11 @@ function encodeSurName(surname) {
     let vow = []
     let missing = "X"
 
-    for (let e of arr) {
-        if (e !== 'A' && e !== 'E' && e !== "I" && e !== 'O' && e !== "U") {
-            cons.push(e)
-        }
+   for (let e of arr) {
         if (e === 'A' || e === 'E' || e === "I" || e === 'O' || e === "U") {
             vow.push(e)
+        }else{
+            cons.push(e)
         }
     }
     const surName = [...cons, ...vow, missing]
@@ -32,11 +29,10 @@ function encodeFirstNAme(fname) {
     let missing = "X"
 
     for (let e of arr) {
-        if (e !== 'A' && e !== 'E' && e !== "I" && e !== 'O' && e !== "U") {
-            cons.push(e)
-        }
         if (e === 'A' || e === 'E' || e === "I" || e === 'O' || e === "U") {
             vow.push(e)
+        }else{
+            cons.push(e)
         }
     }
 
@@ -110,6 +106,9 @@ FiscalCode({
     dob: "16/1/1928"
 })
 //➞ "MSOMKY28A16"
+
+
+
 
 
 
