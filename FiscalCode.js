@@ -37,10 +37,10 @@ function encodeFirstNAme(fname) {
     }
 
     if (cons.length > 3) {
-        cons = [...cons[0], cons[2], cons[3]]
+        cons = [cons[0], cons[2], cons[3]]
     }
     if (cons.length === 3) {
-        cons = [...cons[0], cons[1], cons[2]]
+        cons = [cons[0], cons[1], cons[2]]
     }
 
     const firstName = [...cons, ...vow, missing]
